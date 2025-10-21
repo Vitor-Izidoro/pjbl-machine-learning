@@ -1,0 +1,132 @@
+Bibliotecas importadas com sucesso.
+Funções auxiliares definidas.
+
+Dataset de Classificação (PowerSupply) carregado: 29928 linhas, 3 colunas
+Dataset de Regressão (CPU) carregado: 209 linhas, 7 colunas
+Pré-processamento configurado para ambos os datasets.
+Modelos definidos.
+
+--- Processando Tabela A: Classificação com Hold-out (65/35) ---
+  - KNN: Concluído
+  - Decision Tree: Concluído
+  - Naive Bayes: Concluído
+  - MLP: Concluído
+  - SVM: Concluído
+  - Ensemble (somatória): Concluído
+  - Random Forest: Concluído
+  - Bagging: Concluído
+  - Boosting: Concluído
+  - Stacking: Concluído
+  - Blending: Concluído
+  - Adicional: Concluído
+
+--- Processando Tabela B: Classificação com Validação Cruzada (5 folds) ---
+  - KNN: Concluído
+  - Decision Tree: Concluído
+  - Naive Bayes: Concluído
+  - MLP: Concluído
+  - SVM: Concluído
+  - Ensemble (somatória): Concluído
+  - Random Forest: Concluído
+  - Bagging: Concluído
+  - Boosting: Concluído
+  - Stacking: Concluído
+  - Blending: Concluído
+  - Adicional: Concluído
+
+--- Processando Tabela C: Regressão com Hold-out (65/35) ---
+  - Regressão Linear: Concluído
+  - KNN: Concluído
+  - Árvore de Decisão: Concluído
+  - MLP: Concluído
+  - SVM: Concluído
+  - Ensemble (Média): Concluído
+  - Random Forest: Concluído
+  - Bagging: Concluído
+  - Boosting: Concluído
+  - Stacking: Concluído
+  - Blending: Concluído
+  - Adicional: Concluído
+
+--- Processando Tabela D: Regressão com Validação Cruzada (5 folds) ---
+  - Regressão Linear: Concluído
+  - KNN: Concluído
+  - Árvore de Decisão: Concluído
+  - MLP: Concluído
+  - SVM: Concluído
+  - Ensemble (Média): Concluído
+  - Random Forest: Concluído
+  - Bagging: Concluído
+  - Boosting: Concluído
+  - Stacking: Concluído
+  - Blending: Concluído
+  - Adicional: Concluído
+
+
+================================================================================
+RESULTADOS FINAIS
+================================================================================
+
+
+TABELA A: Classificação com protocolo Hold-out (65% para treinamento e 35% para teste)
+             Indutor  Taxa de Acerto (%)  F1 (%)  Precisão (%)  Sensibilidade (%)  Especificidade (%)
+                 KNN              11.456  10.684        11.242             11.458              96.150
+       Decision Tree              10.205  10.100        10.275             10.206              96.096
+         Naive Bayes              15.570   9.530         8.700             15.571              96.329
+                 MLP              16.859  12.274        13.944             16.863              96.385
+                 SVM              16.153  11.150        12.754             16.153              96.354
+Ensemble (somatória)              13.050  12.064        11.900             13.052              96.220
+       Random Forest              10.625  10.579        10.554             10.626              96.114
+             Bagging              10.253  10.216        10.200             10.254              96.098
+            Boosting              10.788   4.126         3.781             10.789              96.121
+            Stacking              10.358   9.821         9.614             10.358              96.103
+            Blending              10.234   9.612         9.412             10.235              96.097
+           Adicional              16.010  13.398        14.235             16.013              96.348
+
+
+TABELA B: Classificação com protocolo experimental validação cruzada com 5 folds
+             Indutor  Taxa de Acerto (%)  F1 (%)  Precisão (%)  Sensibilidade (%)  Especificidade (%)
+                 KNN              11.538  10.669        11.249             11.566              96.154
+       Decision Tree               9.890   9.717         9.895              9.900              96.082
+         Naive Bayes              15.410   9.778         8.466             15.440              96.323
+                 MLP              16.827  11.710        13.026             16.919              96.385
+                 SVM              16.419  11.261        11.719             16.517              96.367
+Ensemble (somatória)              12.717  11.717        11.528             12.734              96.205
+       Random Forest              10.198  10.134        10.108             10.210              96.096
+             Bagging              10.245  10.169        10.131             10.258              96.098
+            Boosting              11.367   4.722         3.553             11.180              96.144
+            Stacking              10.539  10.002         9.813             10.554              96.111
+            Blending              10.582   9.910         9.733             10.575              96.112
+           Adicional              16.416  13.479        14.930             16.455              96.366
+
+
+TABELA C: Regressão com protocolo Hold-out (65% para treinamento e 35% para teste)
+          Indutor  Coeficiente de Determinação (R2)       MSE    RMSE     MAE
+ Regressão Linear                             0.743 12884.731 113.511  50.909
+              KNN                             0.491 25558.068 159.869  58.678
+Árvore de Decisão                             0.637 18243.368 135.068  58.128
+              MLP                             0.788 10658.266 103.239  47.972
+              SVM                            -0.124 56414.905 237.518 105.157
+ Ensemble (Média)                             0.496 25301.012 159.063  63.562
+    Random Forest                             0.588 20667.777 143.763  55.995
+          Bagging                             0.602 19973.102 141.326  54.995
+         Boosting                             0.612 19470.769 139.538  57.772
+         Stacking                             0.546 22771.363 150.902  57.706
+         Blending                             0.549 22654.259 150.513  58.765
+        Adicional                             0.676 16250.882 127.479  53.471
+
+
+TABELA D: Regressão com protocolo experimental validação cruzada com 5 folds
+          Indutor  Coeficiente de Determinação (R2)       MSE    RMSE    MAE
+ Regressão Linear                             0.785  4719.553  68.699 41.090
+              KNN                             0.781  7382.700  85.923 32.312
+Árvore de Decisão                             0.847  3755.418  61.281 32.385
+              MLP                             0.818  3819.742  61.804 33.480
+              SVM                             0.002 26231.869 161.963 69.418
+ Ensemble (Média)                             0.784  6809.279  82.518 34.367
+    Random Forest                             0.880  3460.244  58.824 26.951
+          Bagging                             0.857  4145.521  64.386 29.969
+         Boosting                             0.819  4079.682  63.872 41.748
+         Stacking                             0.651  8657.877  93.048 40.798
+         Blending                             0.553 10294.422 101.461 46.263
+        Adicional                             0.890  2781.351  52.739 27.797
