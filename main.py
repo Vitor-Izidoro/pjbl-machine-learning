@@ -85,7 +85,7 @@ def specificity_score(y_true, y_pred):
 
 def get_classification_metrics(y_true, y_pred):
     """Calcula as métricas da parte de classificação."""
-    # Retorna todas as colunas pedidas no PjBL (Tabela A e B)
+    # Retorna todas as colunas da tabela A e B
     return {
         'Taxa de Acerto (%)': accuracy_score(y_true, y_pred) * 100,
         'F1 (%)': f1_score(y_true, y_pred, average='macro') * 100,
@@ -96,7 +96,7 @@ def get_classification_metrics(y_true, y_pred):
 
 def get_regression_metrics(y_true, y_pred):
     """Calcula as métricas da parte de regressão."""
-    # Métricas pedidas nas Tabelas C e D
+    # metrica pedidas nas Tabelas C e D
     return {
         'Coeficiente de Determinação (R2)': r2_score(y_true, y_pred),
         'MSE': mean_squared_error(y_true, y_pred),
@@ -110,7 +110,7 @@ print("Funções auxiliares definidas.")
 # 3. PREPARAÇÃO DOS DADOS
 # 
 
-# Carrego os datasets .arff (devem ser diferentes dos usados em aula)
+# Carrega os datasets .arff
 df_class = load_arff_to_df('powersupply.arff')
 df_reg = load_arff_to_df('cpu.arff')
 
@@ -123,7 +123,7 @@ if df_class is not None:
     # Transformo as classes textuais em números
     le = LabelEncoder()
     y_class = le.fit_transform(y_class_str)
-    # Normalizo os dados (muito importante pro MLP e SVM)
+    # Normaliza os dados né
     preprocessor_class = StandardScaler()
 
 # --- Pré-processamento da Regressão ---
@@ -145,8 +145,7 @@ if df_reg is not None:
 # 4. DEFINIÇÃO DOS MODELOS
 # 
 
-# Aqui defino todos os algoritmos exigidos nas tabelas do PjBL
-# A ideia é facilitar a execução automática de todos eles
+# Aqui vou definir todos os algoritmos exigidos nas tabela
 
 # --- Modelos de Classificação ---
 estimators_class = [('dt', DecisionTreeClassifier(random_state=42)), ('knn', KNeighborsClassifier())]
@@ -191,7 +190,7 @@ print("Modelos definidos.")
 # 5. EXECUÇÃO DOS EXPERIMENTOS
 # 
 
-# Aqui são geradas as 4 tabelas pedidas no PDF (A, B, C e D)
+# Aqui são geradas as 4 tables (A, B, C, D)
 # Cada bloco executa todos os modelos e armazena as métricas
 
 if df_class is not None:
@@ -273,8 +272,8 @@ if df_reg is not None:
 # 6. EXIBIÇÃO DOS RESULTADOS
 # 
 
-# Exibo todas as tabelas no formato exigido pelo enunciado
-# Comentário rápido: essas saídas correspondem às quatro tabelas pedidas no PDF
+# Exiba todas as tabelas no formato exigido pelo enunciado
+# Comentário rápido: essas saídas correspondem às quatro tabelas q tão no PDF
 
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
 print("\n\n" + "="*80)
